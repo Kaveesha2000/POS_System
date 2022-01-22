@@ -17,7 +17,7 @@
     <section class="row">
         <!--invoice details-->
         <div class="col-4 mt-3">
-            <div class="card border-success mb-3" style="max-width: 30rem;">
+            <div class="card border-success mb-3" style="max-width: 30rem; min-height: 22rem">
                 <div class="card-header text-white" style="font-weight: bold; background-color: #38ada9">Invoice Details</div>
                 <div class="card-body">
                     <form>
@@ -63,7 +63,7 @@
         </div>
         <!--item selection-->
         <div class="col-4 mt-3">
-            <div class="card border-warning mb-3" style="max-width: 30rem;">
+            <div class="card border-warning mb-3" style="max-width: 30rem; min-height: 22rem">
                 <div class="card-header text-white" style="font-weight: bold; background-color: #f6b93b">Item Selection</div>
                 <div class="card-body">
                     <form>
@@ -97,8 +97,10 @@
                                 <input type="text" class="form-control" id="exampleInputOrderQty" aria-describedby="orderQtyHelp">
                                 <div id="orderQtyHelp" class="form-text"></div>
                             </div>
-                            <div class="mb-2 col-12">
-                                <button type="button" class="btn btn-primary  btn-sm">+Add</button>
+                        </section>
+                        <section class="row justify-content-center">
+                            <div class="mt-2 col-5">
+                                <button type="button" class="btn btn-primary  btn-sm" style="width: 100%;">+Add</button>
                             </div>
                         </section>
                     </form>
@@ -107,7 +109,7 @@
         </div>
         <!--final totals-->
         <div class="col-4 mt-3">
-            <div class="card border-dark mb-3" style="max-width: 30rem;">
+            <div class="card border-dark mb-3" style="max-width: 30rem; min-height: 22rem">
                 <div class="card-body">
                     <form>
                         <section class="row" style="width: 100%">
@@ -138,8 +140,10 @@
                             <div class="mb-2 col-12 mt-4">
                                 <label for="exampleInputUnitPrice" class="form-label" style="font-weight: bold; font-size: 20px; color: #0fbcf9">Balance :- </label>
                             </div>
-                            <div class="mt-4">
-                                <button type="button" class="btn btn-success  btn-sm" style="width: 80%; align-content: center">Purchase</button>
+                        </section>
+                        <section class="row justify-content-center">
+                            <div class="mt-4 col-5">
+                                <button type="button" class="btn btn-success  btn-sm" style="width: 100%;">Purchase</button>
                             </div>
                         </section>
                     </form>
