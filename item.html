@@ -48,8 +48,8 @@
             <div class="form-text" id="searchBarHelp"></div>
         </div>
         <button class="btn btn-primary  btn-sm" type="button">Search</button>
-        <button class="btn btn-success  btn-sm" type="button">+Add</button>
-        <button class="btn btn-warning  btn-sm" type="button">Update</button>
+        <button class="btn btn-success  btn-sm" id="saveBtn" type="button">+Add</button>
+        <button class="btn btn-warning  btn-sm" id="UpdateBtn" type="button">Update</button>
         <button class="btn btn-danger  btn-sm" type="button">Delete</button>
     </section>
     <!--table-->
@@ -63,31 +63,41 @@
                 <th scope="col">Qty On Hand</th>
             </tr>
             </thead>
-            <tbody>
-            <tr>
-                <th scope="row">1</th>
-                <td>Milk</td>
-                <td>50.00/=</td>
-                <td>400</td>
-            </tr>
-            <tr>
-                <th scope="row">2</th>
-                <td>Rice</td>
-                <td>160.00/=</td>
-                <td>80kg</td>
-            </tr>
-            <tr>
-                <th scope="row">3</th>
-                <td>Soap</td>
-                <td>80.00/=</td>
-                <td>250</td>
-            </tr>
+            <tbody id="tblItem">
+
             </tbody>
         </table>
     </section>
 </main>
+<script src="assets/jQuery/jquery-3.6.0.min.js"></script>
 <script crossorigin="anonymous"
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-        src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+        src="assets/bootstrap/js/bootstrap.bundle.min.js">
+</script>
+<script>
+    /*selecting the button*/
+    $("#saveBtn").click(function () {
+
+        //gather customer information
+        let itemId = $("#exampleInputId").val();
+        let itemName = $("#exampleInputName").val();
+        let itemUnitPrice = $("#exampleInputUnitPrice").val();
+        let itemQtyOnHand = $("#exampleInputQTYOnHand").val();
+
+        console.log(itemId, itemName, itemUnitPrice, itemQtyOnHand);
+        console.log(typeof itemId, typeof itemName, typeof itemUnitPrice, typeof itemQtyOnHand);
+
+        let row = `<tr><td>${itemId}</td><td>${itemName}</td><td>${itemUnitPrice}</td><td>${itemQtyOnHand}</td></tr>`;
+        console.log(row);
+
+        $("#tblItem").append(row);
+
+        $("#tblItem>tr").click(function () {
+            console.log(this);
+        });
+
+    });
+
+</script>
 </body>
 </html>
