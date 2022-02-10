@@ -92,10 +92,38 @@
 
         $("#tblItem").append(row);
 
+        $("#tblItem > tr").off("click");
+
         $("#tblItem>tr").click(function () {
-            console.log(this);
+            let itemId = $(this).children(":eq(0)").text();
+            let itemName = $(this).children(":eq(1)").text();
+            let itemUnitPrice = $(this).children(":eq(2)").text();
+            let itemQtyOnHand = $(this).children(":eq(3)").text();
+
+            $("#exampleInputId").val(itemId);
+            $("#exampleInputName").val(itemName);
+            $("#exampleInputUnitPrice").val(itemUnitPrice);
+            $("#exampleInputQTYOnHand").val(itemQtyOnHand);
         });
 
+    });
+
+    $("#exampleInputId").keydown(function (event) {
+        if ((event.keyCode == 13)) {
+            $("#exampleInputName").focus();
+        }
+    });
+
+    $("#exampleInputName").keydown(function (event) {
+        if ((event.keyCode == 13)) {
+            $("#exampleInputUnitPrice").focus();
+        }
+    });
+
+    $("#exampleInputUnitPrice").keydown(function (event) {
+        if ((event.keyCode == 13)) {
+            $("#exampleInputQTYOnHand").focus();
+        }
     });
 
 </script>

@@ -88,10 +88,41 @@
 
         $("#tblCustomer").append(row);
 
-        $("#tblCustomer>tr").click(function () {
-            console.log(this);
+        $("#tblCustomer > tr").off("click");
+
+        $("#tblCustomer > tr").click(function () {
+            //console.log(this);
+            let cusId = $(this).children(":eq(0)").text();
+            let cusName = $(this).children(":eq(1)").text();
+            let cusAddress = $(this).children(":eq(2)").text();
+            let cusTelNo = $(this).children(":eq(3)").text();
+
+            console.log(cusId, cusName, cusAddress, cusTelNo);
+
+            $("#id").val(cusId);
+            $("#name").val(cusName);
+            $("#address").val(cusAddress);
+            $("#telNo").val(cusTelNo);
         });
 
+    });
+
+    $("#id").keydown(function (event) {
+        if ((event.keyCode == 13)) {
+            $("#name").focus();
+        }
+    });
+
+    $("#name").keydown(function (event) {
+        if ((event.keyCode == 13)) {
+            $("#address").focus();
+        }
+    });
+
+    $("#address").keydown(function (event) {
+        if ((event.keyCode == 13)) {
+            $("#telNo").focus();
+        }
     });
 
 </script>
